@@ -7,6 +7,12 @@ const param = process.env.ENV_TEST || 'nada definido';
 
 // app.use('/api/test', test);
 
+let logCount = 1;
+
+setInterval(() => {
+  console.log(`log numb: ${logCount++}`)
+}, 2500);
+
 app.get('/', function (req, res) {
   res.send(`Hello World! - ${param}`);
 })
